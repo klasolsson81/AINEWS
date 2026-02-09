@@ -1,0 +1,123 @@
+{
+  "broadcast_id": "mock-broadcast-001",
+  "generated_at": "2026-02-09T19:00:00Z",
+  "language": "sv-SE",
+  "total_segments": 7,
+  "estimated_duration_seconds": 480,
+  "intro": {
+    "anchor_text": "God kväll och välkommen till Nyhetskollen. Jag heter Anna Lindström. Ikväll tar vi en titt på de senaste händelserna.",
+    "tone": "warm, professional, welcoming"
+  },
+  "segments": [
+    {
+      "segment_number": 1,
+      "category": "inrikes",
+      "headline": "Översvämningar i Västsverige",
+      "source": "SVT Nyheter",
+      "source_url": "https://www.svt.se/nyheter/lokalt/vast/oversvamningar-goteborg",
+      "priority": "top_story",
+      "anchor_intro": {
+        "text": "Vi inleder med väderkaoset i västra Sverige. Under det senaste dygnet har kraftiga skyfall orsakat stora översvämningar i Göteborgsregionen.",
+        "tone": "serious, concerned",
+        "estimated_seconds": 12
+      },
+      "broll_voiceover": {
+        "text": "Räddningstjänsten har under natten fått in över tvåhundra larm om översvämningar. Flera vägar har stängts av och boende i låglänta områden har uppmanats att hålla sig inomhus. Enligt SMHI väntas regnet fortsätta under morgondagen med ytterligare femtio millimeter.",
+        "tone": "serious, informative",
+        "estimated_seconds": 35
+      },
+      "visual_content": {
+        "type": "real_event",
+        "visual_strategy": "editorial_images_with_maps",
+        "scenes": [
+          {
+            "description": "Karta över Västsverige med markering av drabbade områden",
+            "type": "generated_map",
+            "duration_seconds": 8,
+            "source_hint": "Generera karta med Göteborg markerat"
+          },
+          {
+            "description": "Redaktionell bild från SVT-artikeln",
+            "type": "editorial_image",
+            "duration_seconds": 8
+          },
+          {
+            "description": "Stockvideo av räddningstjänst vid översvämning",
+            "type": "stock_footage",
+            "search_terms": ["flooding rescue", "översvämning räddning"],
+            "duration_seconds": 8
+          },
+          {
+            "description": "AI-illustration av regnväder över stad",
+            "type": "ai_generated_image",
+            "prompt": "Heavy rain over Scandinavian city, dark storm clouds, wet streets, photojournalistic style",
+            "duration_seconds": 8
+          }
+        ]
+      },
+      "anchor_outro": {
+        "text": "Vi följer utvecklingen.",
+        "tone": "transitional",
+        "estimated_seconds": 4
+      },
+      "lower_third": {
+        "title": "ÖVERSVÄMNINGAR I VÄSTSVERIGE",
+        "subtitle": "Över 200 larm till räddningstjänsten"
+      }
+    },
+    {
+      "segment_number": 2,
+      "category": "ekonomi",
+      "headline": "Riksbanken sänker styrräntan",
+      "source": "SVT Nyheter",
+      "source_url": "https://www.svt.se/nyheter/ekonomi/riksbanken-sanker-rantan",
+      "priority": "major",
+      "anchor_intro": {
+        "text": "Riksbanken meddelade idag att styrräntan sänks till två och en halv procent. Beslutet var väntat men välkomnas av marknaden.",
+        "tone": "neutral, informative",
+        "estimated_seconds": 10
+      },
+      "broll_voiceover": {
+        "text": "Riksbankschefen framhöll att inflationen nu är nära målet på två procent och att den svenska ekonomin visar tecken på avmattning. Sänkningen med noll komma tjugofem procentenheter var väntad av de flesta analytiker. Stockholmsbörsen reagerade positivt med en uppgång på en och en halv procent.",
+        "tone": "neutral, analytical",
+        "estimated_seconds": 30
+      },
+      "visual_content": {
+        "type": "economic_data",
+        "visual_strategy": "maps_and_data_graphics",
+        "scenes": [
+          {
+            "description": "Redaktionell bild av Riksbanken",
+            "type": "editorial_image",
+            "duration_seconds": 8
+          },
+          {
+            "description": "Graf över styrräntans utveckling senaste 2 åren",
+            "type": "generated_graphic",
+            "data_hint": "Styrränta 2024-2026, sjunkande trend",
+            "duration_seconds": 10
+          },
+          {
+            "description": "Stockholmsbörsens utveckling idag",
+            "type": "generated_graphic",
+            "data_hint": "OMXS30 dagsutveckling, positiv",
+            "duration_seconds": 8
+          }
+        ]
+      },
+      "anchor_outro": {
+        "text": "Vi går vidare till internationella nyheter.",
+        "tone": "transitional",
+        "estimated_seconds": 4
+      },
+      "lower_third": {
+        "title": "RIKSBANKEN SÄNKER RÄNTAN",
+        "subtitle": "Styrräntan nu 2,5 procent"
+      }
+    }
+  ],
+  "outro": {
+    "anchor_text": "Det var allt för ikväll. Tack för att ni tittade. Vi ses imorgon. God natt.",
+    "tone": "warm, closing"
+  }
+}

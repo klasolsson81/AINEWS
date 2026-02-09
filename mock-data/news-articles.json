@@ -1,0 +1,79 @@
+[
+  {
+    "id": "mock-001",
+    "title": "Kraftiga översvämningar drabbar Västsverige",
+    "summary": "Räddningstjänsten har under natten fått in över tvåhundra larm om översvämningar i Göteborgsregionen. Flera vägar har stängts av.",
+    "content": "Under det senaste dygnet har kraftiga skyfall orsakat stora översvämningar i Göteborgsregionen. Räddningstjänsten har fått in över 200 larm och flera vägar har stängts av. Boende i låglänta områden har uppmanats att hålla sig inomhus. Enligt SMHI väntas regnet fortsätta under morgondagen med ytterligare 50 millimeter.",
+    "sourceName": "SVT Nyheter",
+    "sourceUrl": "https://www.svt.se/nyheter/lokalt/vast/oversvamningar-goteborg",
+    "imageUrl": "https://www.svt.se/image/wide/992/oversvamning-goteborg.jpg",
+    "category": "Inrikes",
+    "publishedAt": "2026-02-09T06:00:00Z"
+  },
+  {
+    "id": "mock-002",
+    "title": "EU skärper reglerna för artificiell intelligens",
+    "summary": "EU-parlamentet har röstat igenom nya skärpta regler för AI-system som träder i kraft under sommaren 2026.",
+    "content": "EU-parlamentet har med bred majoritet antagit nya regler för artificiell intelligens. De nya reglerna innebär bland annat krav på transparens för AI-genererat innehåll och striktare kontroller av högrisk-AI-system inom sjukvård och rättsväsende. Reglerna träder i kraft den 2 augusti 2026.",
+    "sourceName": "Dagens Nyheter",
+    "sourceUrl": "https://www.dn.se/varlden/eu-skarper-ai-regler",
+    "imageUrl": "https://www.dn.se/images/eu-parlament-ai.jpg",
+    "category": "Utrikes",
+    "publishedAt": "2026-02-09T08:30:00Z"
+  },
+  {
+    "id": "mock-003",
+    "title": "Malmö FF vinner svenska cupen efter dramatisk final",
+    "summary": "Malmö FF besegrade AIK med 3-2 i en dramatisk cupfinal på Friends Arena inför 45 000 åskådare.",
+    "content": "Malmö FF tog hem svenska cupen efter en rafflande final mot AIK. Matchen slutade 3-2 efter att Malmös anfallare avgjort i den 89:e minuten. Det är klubbens tredje cuptitel på fem år. Över 45 000 åskådare följde matchen på Friends Arena i Solna.",
+    "sourceName": "Expressen",
+    "sourceUrl": "https://www.expressen.se/sport/fotboll/malmo-ff-vinner-cupen",
+    "imageUrl": "https://www.expressen.se/images/malmo-cup-final.jpg",
+    "category": "Sport",
+    "publishedAt": "2026-02-09T10:15:00Z"
+  },
+  {
+    "id": "mock-004",
+    "title": "Riksbanken sänker styrräntan till 2,5 procent",
+    "summary": "Riksbanken meddelar att styrräntan sänks med 0,25 procentenheter till 2,5 procent, i linje med marknadens förväntningar.",
+    "content": "Riksbanken har beslutat att sänka reporäntan med 0,25 procentenheter till 2,5 procent. Beslutet var väntat av de flesta ekonomer och marknadsanalytiker. Riksbankschefen framhöll att inflationen nu är nära målet på 2 procent och att ekonomin visar tecken på avmattning.",
+    "sourceName": "SVT Nyheter",
+    "sourceUrl": "https://www.svt.se/nyheter/ekonomi/riksbanken-sanker-rantan",
+    "imageUrl": "https://www.svt.se/image/wide/992/riksbanken.jpg",
+    "category": "Ekonomi",
+    "publishedAt": "2026-02-09T09:00:00Z"
+  },
+  {
+    "id": "mock-005",
+    "title": "Ny cybersäkerhetsattack mot svenska myndigheter",
+    "summary": "Flera svenska myndigheter har drabbats av en koordinerad cyberattack. MSB utreder omfattningen.",
+    "content": "Myndigheten för samhällsskydd och beredskap (MSB) bekräftar att flera svenska myndigheter utsatts för en koordinerad cyberattack under natten. Attacken riktade sig mot e-postsystem och interna nätverk. Inga känsliga uppgifter ska ha läckt, men utredningen pågår fortfarande.",
+    "sourceName": "Sveriges Radio",
+    "sourceUrl": "https://sverigesradio.se/artikel/cyberattack-svenska-myndigheter",
+    "imageUrl": null,
+    "category": "Teknik",
+    "publishedAt": "2026-02-09T07:45:00Z"
+  },
+  {
+    "id": "mock-006",
+    "title": "Kulturministern presenterar ny filmsatsning",
+    "summary": "Regeringen satsar 200 miljoner kronor på svensk filmproduktion under de kommande tre åren.",
+    "content": "Kulturminister Anna Ekström presenterade idag en ny satsning på svensk film. Totalt 200 miljoner kronor fördelas under tre år till Svenska Filminstitutet för att stärka svensk filmproduktion och distribution. Satsningen riktar sig särskilt mot nya svenska filmskapare och regionala produktioner.",
+    "sourceName": "Dagens Nyheter",
+    "sourceUrl": "https://www.dn.se/kultur-noje/ny-filmsatsning",
+    "imageUrl": "https://www.dn.se/images/kulturministern-film.jpg",
+    "category": "Kultur",
+    "publishedAt": "2026-02-09T11:00:00Z"
+  },
+  {
+    "id": "mock-007",
+    "title": "SMHI varnar för storm i södra Sverige",
+    "summary": "SMHI har utfärdat klass 2-varning för storm längs kusterna i Skåne och Blekinge under onsdagen.",
+    "content": "SMHI varnar för kraftiga vindar med stormbyar upp till 30 meter per sekund längs kusterna i södra Sverige. Varningen gäller från onsdag morgon till torsdag kväll. Sjöfarten avråds från att ge sig ut och allmänheten uppmanas att säkra lösa föremål utomhus.",
+    "sourceName": "SVT Nyheter",
+    "sourceUrl": "https://www.svt.se/nyheter/lokalt/skane/smhi-varnar-storm",
+    "imageUrl": "https://www.svt.se/image/wide/992/storm-skane.jpg",
+    "category": "Vader",
+    "publishedAt": "2026-02-09T05:30:00Z"
+  }
+]

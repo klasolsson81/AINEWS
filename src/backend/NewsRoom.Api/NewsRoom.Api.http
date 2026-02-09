@@ -1,0 +1,35 @@
+@NewsRoom.Api_HostAddress = http://localhost:5005
+
+### Health check
+GET {{NewsRoom.Api_HostAddress}}/health
+Accept: application/json
+
+### Get available news categories
+GET {{NewsRoom.Api_HostAddress}}/api/news/categories
+Accept: application/json
+
+### Get news articles (all categories, last 24h)
+GET {{NewsRoom.Api_HostAddress}}/api/news?timePeriodHours=24&maxArticles=7
+Accept: application/json
+
+### Get news articles (filtered by categories)
+GET {{NewsRoom.Api_HostAddress}}/api/news?timePeriodHours=12&categories=Inrikes,Utrikes,Sport&maxArticles=5
+Accept: application/json
+
+### Start a new broadcast generation
+POST {{NewsRoom.Api_HostAddress}}/api/broadcast
+Content-Type: application/json
+
+{
+  "timePeriodHours": 24,
+  "categories": ["Inrikes", "Utrikes", "Sport", "Politik", "Ekonomi"],
+  "maxArticles": 7
+}
+
+### Get broadcast job status (replace {jobId} with actual ID)
+GET {{NewsRoom.Api_HostAddress}}/api/broadcast/{jobId}
+Accept: application/json
+
+### Get recent broadcast jobs
+GET {{NewsRoom.Api_HostAddress}}/api/broadcast/recent
+Accept: application/json

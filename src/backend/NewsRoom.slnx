@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="NewsRoom.Api/NewsRoom.Api.csproj" />
+  <Project Path="NewsRoom.Core/NewsRoom.Core.csproj" />
+  <Project Path="NewsRoom.Infrastructure/NewsRoom.Infrastructure.csproj" />
+  <Project Path="NewsRoom.Tests/NewsRoom.Tests.csproj" />
+  <Project Path="NewsRoom.Workers/NewsRoom.Workers.csproj" />
+</Solution>
