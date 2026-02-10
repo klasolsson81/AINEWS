@@ -6,6 +6,35 @@ Format: [YYYY-MM-DD] — Beskrivning
 
 ---
 
+## [2026-02-09] — FAS 2: Nyheter + Manus + Frontend
+
+### Tillagt
+- **Next.js Frontend** med vardagsrums-TV-koncept
+  - TVScreen-komponent med 4 tillstånd (standby, generating, playing, error)
+  - FilterPanel: tidsperiod, kategorier, antal nyheter, generera-knapp
+  - StatusBar: steg-för-steg-progress med visuella pipeline-indikatorer
+  - API-klient mot backend REST-endpoints
+  - SignalR-klient för realtidsuppdateringar
+  - Mörkt tema med TV-ambient-glow-effekter
+- **RssNewsSource** — Hämtar nyheter från SVT, DN, Expressen, SR
+  - RSS/Atom-parsing med System.ServiceModel.Syndication
+  - Kategori-mappning baserad på URL och RSS-kategorier
+  - Tidsfiltrering och deduplicering
+- **OgImageExtractor** — Hämtar redaktionella bilder från artikelsidor
+  - Fallback-kedja: og:image → twitter:image → första <img>
+  - HtmlAgilityPack för HTML-parsing
+- **OpenAiScriptGenerator** — GPT-4o manusgenerering
+  - Svensk nyhetsredaktör-systemprompt med visuell beslutsmatris
+  - JSON-response-format med robust parsing
+  - Fullständigt manusschema med visual_content per segment
+- **Provider-switching** via konfiguration
+  - NEWS_PROVIDER=rss|mock
+  - LLM_PROVIDER=openai|mock
+  - EDITORIAL_IMAGE_ENABLED=true|false
+- 8 nya enhetstester (21 totalt, alla gröna)
+
+---
+
 ## [2026-02-09] — Projektstart
 
 ### Tillagt
