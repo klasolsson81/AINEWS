@@ -87,7 +87,54 @@ Beslut, problem och lardomar dokumenteras har kronologiskt.
 - Nya tester: InMemoryBroadcastRepository (5 st), MockTtsProvider (3 st)
 
 ### Nasta steg
-- FAS 3: ElevenLabs TTS-integration
+- ~~FAS 3: ElevenLabs TTS-integration~~ KLART
 - FAS 4: Remotion-templates for nyhetssandning
-- Worker Services implementation
+- ~~Worker Services implementation~~ KLART
 - End-to-end-test med mock-video
+
+---
+
+## 2026-02-10 — Dag 2: FAS 3 + Workers + Stockmaterial
+
+### Beslut
+
+**ElevenLabs TTS med eleven_multilingual_v2**
+- Valde multilingual v2 for bast svensk rostkvalitet
+- Ton-baserade rostinstallningar: "serious" -> hog stability, "warm" -> hog similarity_boost
+- SHA256-caching av genererat ljud — samma text ger samma fil, sparar API-anrop
+- Default rost-ID: Rachel (21m00Tcm4TlvDq8ikWAM), konfigurerbart via TTS_ELEVENLABS_VOICE_ID
+
+**Pexels for stockmaterial (gratis, royalty-free)**
+- Pexels API ger bra resultat for generiska nyhetsbilder/videos
+- Videosokning med landskapsorientering, resolution-val narmast 1920px
+- Attribution inkluderas automatiskt: "Foto: {fotograf} / Pexels"
+- Fallback fran video till foto om inga videoresultat hittas
+
+**RabbitMQ.Client 7.x (helt async API)**
+- RabbitMQ.Client 7.x har helt nytt async API — alla metoder ar async
+- AsyncEventingBasicConsumer for meddelandekonsumtion
+- Manuell ack/nack for tillforlitlighet
+- Scopad DI-resolution per meddelande (IServiceProvider.CreateScope)
+- Prefetch 1 for tunga jobb (TTS, Avatar, Composition), 2 for BRoll
+
+**Worker-arkitektur**
+- 4 separata workers (TTS, Avatar, BRoll, Composition)
+- Varje worker ar en BackgroundService som registreras som HostedService
+- RabbitMqConnection som singleton med automatisk ateranslutning
+- Durabel koer overelver RabbitMQ-omstarter
+
+### Lardomar
+- RabbitMQ.Client 7.x: CreateConnectionAsync(), CreateChannelAsync(), BasicConsumeAsync() — alla async
+- ElevenLabs API returnerar ra MP3-bytes (inte JSON) — response.Content.ReadAsByteArrayAsync()
+- Pexels video_files array kan ha flera format — filtrera pa file_type == "video/mp4"
+- InternalsVisibleTo kravs for att testa interna metoder fran testprojektet
+
+### Testresultat
+- 52 tester totalt, alla grona
+- Nya tester: ElevenLabsTtsProvider (16 st), PexelsBRollProvider (15 st)
+
+### Nasta steg
+- FAS 4: Remotion-templates for nyhetssandning
+- FAS 5: Avatar-integration (D-ID)
+- End-to-end-test med riktiga providers
+- PostgreSQL-integration (ersatt InMemoryBroadcastRepository)

@@ -6,6 +6,35 @@ Format: [YYYY-MM-DD] — Beskrivning
 
 ---
 
+## [2026-02-10] — FAS 3: TTS + Workers + Stockmaterial
+
+### Tillagt
+- **ElevenLabsTtsProvider** — Riktig TTS via ElevenLabs API
+  - Multilingual v2-modell for svensk rost
+  - Ton-baserade rostinstallningar (serious, warm, light, transitional)
+  - SHA256-baserad caching av genererat ljud
+  - Konfigurerbar rost-ID och lagringssokvag
+- **PexelsBRollProvider** — Royalty-free stockmaterial via Pexels API
+  - Foto- och videosokning med landscape-orientering
+  - Videoupplosningsval (narmare 1920px valjs)
+  - Fotograf-attribution ("Foto: namn / Pexels")
+  - Fallback fran video till foto vid tomma resultat
+  - URL-baserad filcaching
+- **RabbitMQ Worker Services** — 4 bakgrundsworkers
+  - `TtsWorker` — Konsumerar tts-generation-kon
+  - `AvatarWorker` — Konsumerar avatar-generation-kon
+  - `BRollWorker` — Konsumerar broll-generation-kon
+  - `CompositionWorker` — Konsumerar video-composition-kon
+  - `RabbitMqConnection` — Singleton med automatisk ateranslutning
+  - Alla workers: manuell ack/nack, scopad DI, strukturerad loggning
+- **Workers Program.cs** — Komplett worker-host med Serilog
+- **Provider-switching utokat**
+  - TTS_PROVIDER=elevenlabs|mock
+  - BROLL_VIDEO_PROVIDER=pexels|mock
+- 31 nya enhetstester (52 totalt, alla grona)
+
+---
+
 ## [2026-02-09] — FAS 2: Nyheter + Manus + Frontend
 
 ### Tillagt

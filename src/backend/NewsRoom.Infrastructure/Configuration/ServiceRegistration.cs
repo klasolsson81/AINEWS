@@ -1,12 +1,14 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NewsRoom.Core.Interfaces;
+using NewsRoom.Infrastructure.BRoll;
 using NewsRoom.Infrastructure.Images;
 using NewsRoom.Infrastructure.Mocks;
 using NewsRoom.Infrastructure.News;
 using NewsRoom.Infrastructure.Persistence;
 using NewsRoom.Infrastructure.ScriptGeneration;
 using NewsRoom.Infrastructure.Services;
+using NewsRoom.Infrastructure.Tts;
 
 namespace NewsRoom.Infrastructure.Configuration;
 
@@ -44,14 +46,22 @@ public static class ServiceRegistration
         else
             services.AddScoped<IScriptGenerator, MockScriptGenerator>();
 
-        // TTS — mock by default
-        services.AddScoped<ITtsProvider, MockTtsProvider>();
+        // TTS — switch between mock and ElevenLabs
+        var ttsProvider = GetConfigValue(configuration, "TTS_PROVIDER") ?? "mock";
+        if (ttsProvider == "elevenlabs")
+            services.AddScoped<ITtsProvider, ElevenLabsTtsProvider>();
+        else
+            services.AddScoped<ITtsProvider, MockTtsProvider>();
 
         // Avatar — mock by default
         services.AddScoped<IAvatarGenerator, MockAvatarGenerator>();
 
-        // B-Roll — mock by default
-        services.AddScoped<IBRollProvider, MockBRollProvider>();
+        // B-Roll — switch between mock and Pexels
+        var brollProvider = GetConfigValue(configuration, "BROLL_VIDEO_PROVIDER") ?? "mock";
+        if (brollProvider == "pexels")
+            services.AddScoped<IBRollProvider, PexelsBRollProvider>();
+        else
+            services.AddScoped<IBRollProvider, MockBRollProvider>();
         services.AddScoped<IBRollOrchestrator, MockBRollOrchestrator>();
         services.AddScoped<IMapGenerator, MockMapGenerator>();
         services.AddScoped<IDataGraphicGenerator, MockDataGraphicGenerator>();
