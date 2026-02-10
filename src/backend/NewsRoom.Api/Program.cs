@@ -35,7 +35,7 @@ try
     });
 
     // Register all NewsRoom services (mocks by default, real providers via config)
-    builder.Services.AddNewsRoomServices();
+    builder.Services.AddNewsRoomServices(builder.Configuration);
 
     var app = builder.Build();
 
